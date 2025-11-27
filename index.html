@@ -12,7 +12,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0d0b33;
+      background: linear-gradient(180deg, #0d0b33 0%, #141055 60%, #1b1770 100%);
       color: #ffffff;
     }
     header {
@@ -88,28 +88,61 @@
       margin-top: 0;
       padding-top: 0;
     }
+
+    /* CTA Download do currículo */
+    .cta {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff !important;
+      font-weight: 800;
+      text-decoration: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(37,99,235,0.18), inset 0 -2px 0 rgba(255,255,255,0.04);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+      transform-origin: center;
+      will-change: transform;
+    }
+    .cta:hover,
+    .cta:focus {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(37,99,235,0.22);
+      filter: saturate(1.05);
+      outline: none;
+    }
+    .pulse {
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+      100% { transform: scale(1); }
+    }
+    @media (max-width: 600px) {
+      .pulse { animation: none; }
+    }
   </style>
 </head>
 
 <body>
-  <header>
+  <header data-aos="fade-down">
     <div>
       <h1>Vinícius Araujo da Silva</h1>
       <h2>Analista de Infraestrutura de TI</h2>
 
       <div style="margin-top:14px">
-        <a class="cta" href="https://drive.google.com/file/d/1eSw_q0rai9EbremDJ0f97li7IYAq_MDF/view?usp=sharing" target="_blank" rel="noopener">
+        <a class="cta pulse" href="https://drive.google.com/file/d/1eSw_q0rai9EbremDJ0f97li7IYAq_MDF/view?usp=sharing" target="_blank" rel="noopener" aria-label="Download do currículo em PDF">
           Download do currículo (PDF)
         </a>
       </div>
     </div>
 
-    <img src="vinicius-banner.png" alt="Banner Vinicius" />
+    <img src="vinicius-banner.png" alt="Banner Vinicius" data-aos="zoom-in" />
   </header>
 
   <section>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Sobre Mim</h3>
       <p>
         Sou um profissional de Tecnologia da Informação com experiência sólida em suporte técnico N1/N2/N3, administração de ambientes Microsoft 365, Google Workspace, Windows Server, infraestrutura de redes e segurança. Atuo de forma proativa na análise e resolução de incidentes, implantação e suporte à sistemas, documentação de processos e treinamento de colaboradores, sempre com foco em eficiência, estabilidade e melhoria contínua.
@@ -120,59 +153,25 @@
       </p>
     </div>
 
-    <div class="card">
-      <article class="card" aria-labelledby="habilidades" style="margin-top:16px">
+    <div class="card" data-aos="fade-up">
+      <article class="card" aria-labelledby="habilidades" style="margin-top:16px" data-aos="fade-up">
         <h3 id="habilidades">Habilidades técnicas</h3>
 
         <div class="skills">
-
-          <div class="skill-item">
-            <strong>Service Desk & ITSM</strong>
-            <div class="muted">Registro e gestão de chamados, elaboração de POPs e processos.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Microsoft 365 / Azure AD</strong>
-            <div class="muted">Administração de usuários, grupos, licenças; Teams, SharePoint, OneDrive; políticas de segurança e MFA.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Windows Server</strong>
-            <div class="muted">AD, GPO, DNS, DHCP, compartilhamentos; suporte a Hyper-V e patching.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Redes & Wi-Fi</strong>
-            <div class="muted">IPv4, VLANs, roteamento básico, configuração de switches, roteadores e APs.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Segurança</strong>
-            <div class="muted">Fortigate (VPN, SD-WAN), Bitdefender GravityZone e hardening de endpoints.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Monitoramento</strong>
-            <div class="muted">Zabbix — hosts, templates, alertas; Grafana — dashboards e visualização.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Backup & Recovery</strong>
-            <div class="muted">Veeam, NAS — políticas de retenção, jobs e testes de restauração.</div>
-          </div>
-
-          <div class="skill-item">
-            <strong>Virtualização</strong>
-            <div class="muted">Hyper-V e VMware — gerenciamento e otimização de VMs.</div>
-          </div>
-
+          <div class="skill-item"><strong>Service Desk & ITSM</strong><div class="muted">Registro e gestão de chamados, elaboração de POPs e processos.</div></div>
+          <div class="skill-item"><strong>Microsoft 365 / Azure AD</strong><div class="muted">Administração de usuários, grupos, licenças; Teams, SharePoint, OneDrive; políticas de segurança e MFA.</div></div>
+          <div class="skill-item"><strong>Windows Server</strong><div class="muted">AD, GPO, DNS, DHCP, compartilhamentos; suporte a Hyper-V e patching.</div></div>
+          <div class="skill-item"><strong>Redes & Wi-Fi</strong><div class="muted">IPv4, VLANs, roteamento básico, configuração de switches, roteadores e APs.</div></div>
+          <div class="skill-item"><strong>Segurança</strong><div class="muted">Fortigate (VPN, SD-WAN), Bitdefender GravityZone e hardening de endpoints.</div></div>
+          <div class="skill-item"><strong>Monitoramento</strong><div class="muted">Zabbix — hosts, templates, alertas; Grafana — dashboards e visualização.</div></div>
+          <div class="skill-item"><strong>Backup & Recovery</strong><div class="muted">Veeam, NAS — políticas de retenção, jobs e testes de restauração.</div></div>
+          <div class="skill-item"><strong>Virtualização</strong><div class="muted">Hyper-V e VMware — gerenciamento e otimização de VMs.</div></div>
         </div>
       </article>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Certificados</h3>
-
       <div class="cert-grid">
         <div class="cert-item"><div><strong>CCNA: Enterprise Networking, Security, and Automation</strong><br><span>Nov 2025 — Cisco</span></div></div>
         <div class="cert-item"><div><strong>Introduction to IoT</strong><br><span>Nov 2025 — Cisco</span></div></div>
@@ -192,7 +191,7 @@
       </div>
     </div>
 
-    <div class="card projects">
+    <div class="card projects" data-aos="fade-up">
       <article aria-labelledby="projetos">
         <h3 id="projetos">Projetos relevantes</h3>
         <ul>
@@ -204,12 +203,12 @@
       </article>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Formação</h3>
       <p><strong>Tecnologia em Redes de Computadores</strong><br>Senac — Cursando com conclusão prevista para dezembro de 2025</p>
     </div>
 
-    <div class="card">
+    <div class="card" data-aos="fade-up">
       <h3>Contato</h3>
       <p>Email: tivinicius01@gmail.com<br>
       Telefone: (21) 99288-3529<br>
@@ -218,7 +217,7 @@
 
   </section>
 
-  <footer>
+  <footer data-aos="fade-up">
     © 2025 Vinícius Araujo da Silva — Portfólio Profissional
   </footer>
 
